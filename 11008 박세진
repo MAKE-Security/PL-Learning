@@ -1,0 +1,35 @@
+루비(Ruby) 11008 박세진
+
+# 간단한 계산기 프로그램입니다.
+puts "간단한 계산기 프로그램입니다."
+
+# 첫 번째 숫자를 입력받습니다.
+puts "첫 번째 숫자를 입력하세요: "
+num1 = gets.chomp.to_f
+
+# 두 번째 숫자를 입력받습니다.
+puts "두 번째 숫자를 입력하세요: "
+num2 = gets.chomp.to_f
+
+# 사용자가 원하는 연산자를 입력받습니다.
+puts "어떤 연산을 수행하시겠습니까? (+, -, *, /)"
+operator = gets.chomp
+
+# 입력된 연산자에 따라 적절한 연산을 수행합니다.
+case operator
+when "+"
+  result = num1 + num2
+when "-"
+  result = num1 - num2
+when "*"
+  result = num1 * num2
+when "/"
+  result = num1 / num2
+else
+  # 잘못된 연산자가 입력되었을 경우 프로그램을 종료합니다.
+  puts "잘못된 연산자입니다."
+  exit
+end
+
+# 결과를 출력합니다.
+puts "결과: #{result}"
