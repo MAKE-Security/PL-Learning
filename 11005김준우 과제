@@ -1,0 +1,37 @@
+코틀린 계산기 프로그램 (미완)
+
+import java.util.Scanner
+
+fun main() {
+    // Scanner 클래스를 사용하여 사용자로부터 입력을 받기 위한 scanner 변수를 생성합니다.
+    val scanner = Scanner(System.`in`)
+
+    // 첫 번째 숫자를 입력받아 num1 변수에 저장합니다.
+    print("첫 번째 숫자를 입력하세요: ")
+    val num1 = scanner.nextDouble()
+
+    // 두 번째 숫자를 입력받아 num2 변수에 저장합니다.
+    print("두 번째 숫자를 입력하세요: ")
+    val num2 = scanner.nextDouble()
+
+    // 연산자를 입력받아 operator 변수에 저장합니다.
+    // next() 메서드를 사용하여 문자열을 입력받은 후, 첫 번째 글자만 operator 변수에 저장합니다.
+    print("연산자를 입력하세요 (+, -, *, /): ")
+    val operator = scanner.next()[0]
+
+    // operator 변수에 따라 각각의 연산을 수행합니다.
+    // when 표현식을 사용하여 operator 변수가 '+'일 때는 num1 + num2를 수행하고,
+    // '-'일 때는 num1 - num2를 수행하고, '*'일 때는 num1 * num2를 수행하고,
+    // '/'일 때는 num1 / num2를 수행합니다.
+    // 이 때, 각각의 경우에 대해 결과 값을 result 변수에 저장합니다.
+    val result = when (operator) {
+        '+' -> num1 + num2
+        '-' -> num1 - num2
+        '*' -> num1 * num2
+        '/' -> num1 / num2
+        else -> throw IllegalArgumentException("올바른 연산자를 입력해주세요.")
+    }
+
+    // 결과 값을 출력합니다. $ 기호를 사용하여 변수 값을 문자열에 삽입할 수 있습니다.
+    println("결과: $result")
+}
