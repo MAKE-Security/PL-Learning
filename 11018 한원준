@@ -1,0 +1,34 @@
+program calculator
+  implicit none  ! 명시적 선언 사용
+  integer :: num1, num2, result  ! 정수형 변수 선언
+  character :: operator  ! 문자형 변수 선언
+  
+  ! 숫자 입력 받기
+  print *, "Enter first number: "
+  read *, num1
+  
+  print *, "Enter second number: "
+  read *, num2
+  
+  ! 연산자 입력 받기
+  print *, "Enter operator (+, -, *, /): "
+  read *, operator
+  
+  ! 계산 수행하기
+  select case (operator)
+    case ('+')
+      result = num1 + num2
+    case ('-')
+      result = num1 - num2
+    case ('*')
+      result = num1 * num2
+    case ('/')
+      result = num1 / num2
+    case default
+      print *, "Invalid operator"
+  end select
+  
+  ! 결과 출력하기
+  print *, "Result: ", result
+  
+end program calculator
